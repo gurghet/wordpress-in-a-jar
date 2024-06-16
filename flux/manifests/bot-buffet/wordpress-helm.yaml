@@ -32,6 +32,8 @@ spec:
     wordpressUsername: "gurghet"
     wordpressEmail: "gurghet@proton.me"
     wordpressBlogName: "Bot Buffet"
+    service:
+      type: ClusterIP
     ingress:
       enabled: true
       ingressClassName: "traefik"
