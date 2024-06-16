@@ -40,3 +40,4 @@ spec:
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: web
         traefik.ingress.kubernetes.io/router.rule: "PathPrefix(`/`)"
+        traefik.ingress.kubernetes.io/router.service: bot-buffet-wordpress
