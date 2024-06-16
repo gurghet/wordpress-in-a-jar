@@ -33,6 +33,7 @@ spec:
     wordpressEmail: "gurghet@proton.me"
     wordpressBlogName: "Bot Buffet"
     ingress:
+      enabled: true
       ingressClassName: "traefik"
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: web
