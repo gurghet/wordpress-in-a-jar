@@ -37,7 +37,26 @@ spec:
     ingress:
       enabled: true
       ingressClassName: "traefik"
-      annotations:
-        traefik.ingress.kubernetes.io/router.entrypoints: web
-        traefik.ingress.kubernetes.io/router.rule: "PathPrefix(`/`)"
-        traefik.ingress.kubernetes.io/router.service: bot-buffet-wordpress
+      # annotations:
+      #   traefik.ingress.kubernetes.io/router.entrypoints: web
+      #   traefik.ingress.kubernetes.io/router.rule: "PathPrefix(`/`)"
+      #   traefik.ingress.kubernetes.io/router.service: bot-buffet-wordpress
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bot-buffet-wordpress-ingress
+  namespace: default
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: bot-buffet-wordpress
+            port:
+              number: 80
