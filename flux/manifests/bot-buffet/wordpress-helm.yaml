@@ -37,5 +37,6 @@ spec:
     ingress:
       enabled: true
       ingressClassName: "traefik"
+      hostname: ""
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: web
