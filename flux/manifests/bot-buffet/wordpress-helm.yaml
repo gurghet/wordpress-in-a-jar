@@ -46,7 +46,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: bot-buffet-wordpress-ingress
-  namespace: default
+  namespace: bot-buffet
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
